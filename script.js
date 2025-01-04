@@ -30,4 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToTopBtn.classList.remove('visible');
         }
     });
+
+    // Create falling coding objects
+    const codingObjects = ['<i class="fas fa-code"></i>', '<i class="fas fa-laptop-code"></i>', '<i class="fas fa-terminal"></i>'];
+    const container = document.querySelector('body');
+
+    for (let i = 0; i < 5; i++) {
+        const fallElement = document.createElement('div');
+        fallElement.classList.add('fall');
+        fallElement.innerHTML = codingObjects[Math.floor(Math.random() * codingObjects.length)];
+        container.appendChild(fallElement);
+    }
 });
