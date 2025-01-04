@@ -5,24 +5,9 @@ body {
     padding: 0;
     box-sizing: border-box;
     color: #333;
-}
-
-.background-container {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-}
-
-.background-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://media.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif') no-repeat center center/cover;
-    z-index: -1;
-    opacity: 0.1; /* Adjust opacity for effect */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
 .container {
@@ -93,6 +78,8 @@ header nav ul li a {
 /* Section Styles */
 section {
     padding: 60px 0;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 #home {
@@ -128,9 +115,9 @@ section {
     width: 30%;
     margin: 20px;
     padding: 20px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     animation: bounceIn 1s ease;
 }
 
@@ -139,7 +126,6 @@ section {
     color: #77b300;
     margin-bottom: 10px;
 }
-
 
 /* Footer Styles */
 footer {
@@ -189,4 +175,10 @@ footer .social-icons a:hover {
 @keyframes fadeInUp {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
