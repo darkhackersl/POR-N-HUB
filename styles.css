@@ -5,9 +5,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     color: #333;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background: url('https://i.imghippo.com/files/OGs5539KM.webp') no-repeat center center/cover;
+    background-size: cover;
     overflow: hidden; /* Prevent scrollbars due to falling objects */
 }
 
@@ -51,30 +50,6 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-}
-
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    font-size: 18px;
-    background: #77b300;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    transition: opacity 0.3s;
-}
-
-.scroll-to-top.visible {
-    display: block;
-    opacity: 0.8;
-}
-
-.scroll-to-top:hover {
-    opacity: 1;
 }
 
 /* Section Styles */
@@ -179,12 +154,6 @@ footer .social-icons a:hover {
     to { transform: translateY(0); }
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 /* Falling Coding Objects */
 @keyframes fall {
     from {
@@ -223,4 +192,49 @@ footer .social-icons a:hover {
 .fall:nth-child(5) {
     left: 80%;
     animation-duration: 6s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .container {
+        text-align: center;
+    }
+
+    header .container h1 {
+        float: none;
+        display: inline-block;
+    }
+
+    header nav {
+        float: none;
+        margin-top: 20px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #services .service {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    #home h2 {
+        font-size: 24px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    #services .service {
+        width: 100%;
+    }
 }
