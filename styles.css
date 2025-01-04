@@ -8,6 +8,7 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
+    overflow: hidden; /* Prevent scrollbars due to falling objects */
 }
 
 .container {
@@ -51,6 +52,7 @@ header nav ul li a {
     text-decoration: none;
     font-weight: 700;
 }
+
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -181,4 +183,44 @@ footer .social-icons a:hover {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* Falling Coding Objects */
+@keyframes fall {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.fall {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fall 10s linear infinite;
+}
+
+.fall:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+}
+
+.fall:nth-child(3) {
+    left: 70%;
+    animation-duration: 8s;
+}
+
+.fall:nth-child(4) {
+    left: 20%;
+    animation-duration: 14s;
+}
+
+.fall:nth-child(5) {
+    left: 80%;
+    animation-duration: 6s;
 }
