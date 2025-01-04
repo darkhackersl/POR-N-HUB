@@ -101,7 +101,29 @@ section {
     color: #77b300;
     margin-bottom: 10px;
 }
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background: #77b300;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
 
+.scroll-to-top.visible {
+    display: block;
+    opacity: 0.8;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}
 /* Footer Styles */
 footer {
     background: #333;
