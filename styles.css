@@ -154,6 +154,12 @@ footer .social-icons a:hover {
     to { transform: translateY(0); }
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Falling Coding Objects */
 @keyframes fall {
     from {
@@ -192,6 +198,27 @@ footer .social-icons a:hover {
 .fall:nth-child(5) {
     left: 80%;
     animation-duration: 6s;
+}
+
+/* Scroll Animation */
+@keyframes scrollAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animated {
+    opacity: 0;
+    animation: scrollAnimation 1s forwards;
+}
+
+.scroll-animated.scroll-visible {
+    opacity: 1;
 }
 
 /* Responsive Styles */
@@ -237,4 +264,29 @@ footer .social-icons a:hover {
     #services .service {
         width: 100%;
     }
+}
+
+/* Additional CSS for Scroll-to-Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background: #77b300;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
+
+.scroll-to-top.visible {
+    display: block;
+    opacity: 0.8;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
 }
