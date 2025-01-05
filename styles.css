@@ -84,11 +84,11 @@ section {
     background: #66a200;
 }
 
-#about, #services, #contact {
+#about, #services, #commands, #contact {
     text-align: center;
 }
 
-#services .service {
+#services .service, #commands .command {
     display: inline-block;
     width: 30%;
     margin: 20px;
@@ -96,9 +96,15 @@ section {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#services .service i {
+#services .service:hover, #commands .command:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#services .service i, .command-name {
     font-size: 50px;
     color: #77b300;
     margin-bottom: 10px;
@@ -172,7 +178,7 @@ html {
         margin: 10px 0;
     }
 
-    #services .service {
+    #services .service, #commands .command {
         width: 80%;
         margin: 20px auto;
     }
@@ -191,7 +197,7 @@ html {
         font-size: 18px;
     }
 
-    #services .service {
+    #services .service, #commands .command {
         width: 100%;
     }
 }
