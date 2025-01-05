@@ -7,7 +7,8 @@ body {
     color: #333;
     background: url('https://i.imghippo.com/files/OGs5539KM.webp') no-repeat center center/cover;
     background-size: cover;
-    overflow: hidden; /* Prevent scrollbars due to falling objects */
+    position: relative;
+    min-height: 100vh;
 }
 
 .container {
@@ -152,12 +153,6 @@ footer .social-icons a:hover {
 @keyframes fadeInUp {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 /* Falling Coding Objects */
