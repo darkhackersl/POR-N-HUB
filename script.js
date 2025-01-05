@@ -46,18 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Matrix effect
-    const matrix = document.querySelector('.matrix');
-    const columns = Math.floor(window.innerWidth / 20);
-    const drops = Array(columns).fill(1);
 
-    function drawMatrix() {
-        matrix.innerHTML = drops.map((y, index) => {
-            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            drops[index] = y > window.innerHeight ? 0 : y + 20;
-            return `<div style="left: ${index * 20}px; top: ${y}px;">${text}</div>`;
-        }).join('');
+    // Matrix effect
+    function createMatrix() {
+        const matrixContainer = document.querySelector('.matrix');
+        const columns = Math.floor(window.innerWidth / 20);
+        for (let i = 0; i < columns; i++) {
+            const column = document.createElement('div');
+            column.style.left = `${i * 20}px`;
+            column.style.animationDuration = `${Math.random() * 5 + 2}s`;
+            matrixContainer.appendChild(column);
+
+            for (let j = 0; j < 30; j++) {
+                const char = document.createElement('span');
+                char.innerText = String.fromCharCode(0x30A0 + Math.random() * 96);
+                column.appendChild(char);
+            }
+        }
     }
 
-    setInterval(drawMatrix, 50);
+    createMatrix();
 });
