@@ -1,319 +1,55 @@
-/* General Styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
+/* Custom styles for Thenux-CMD */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #000000, #434343);
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Header Styles */
 header {
-    background: rgba(51, 51, 51, 0.9);
+    background-color: #1a202c;
     color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77b300 3px solid;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .container h1 {
-    margin: 0;
-}
-
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
+header a {
     color: #fff;
     text-decoration: none;
-    font-weight: 700;
 }
 
-/* Section Styles */
-section {
-    padding: 60px 0;
+header a:hover {
+    color: #cbd5e0;
+}
+
+.hero-section {
+    background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
     color: #fff;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-#home {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.hero-section h1 {
+    animation: fadeInUp 1s ease-in-out;
 }
 
-#home .btn {
-    color: #333;
-    background: #77b300;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s;
+.hero-section p {
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
-#home .btn:hover {
-    background: #66a200;
+.hero-section a {
+    animation: fadeInUp 2s ease-in-out;
 }
 
-#about, #services, #commands {
-    text-align: center;
-}
-
-#services .service, #commands .command {
-    display: inline-block;
-    width: 30%;
-    margin: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#services .service:hover, #commands .command:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-#services .service i, .command-name {
-    font-size: 50px;
-    color: #77b300;
-    margin-bottom: 10px;
-}
-
-/* Animated Border */
-.animated-border {
-    position: relative;
-    display: inline-block;
-}
-
-.animated-border::before, .animated-border::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #77b300;
-    animation: borderAnimation 1s infinite alternate;
-}
-
-.animated-border::before {
-    top: -5px;
-    left: -5px;
-}
-
-.animated-border::after {
-    bottom: -5px;
-    right: -5px;
-}
-
-@keyframes borderAnimation {
+@keyframes fadeInUp {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Copy Button */
-.copy-btn {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background: #77b300;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+section {
+    padding: 60px 20px;
 }
 
-.copy-btn:hover {
-    background: #66a200;
-}
-
-/* Copy Success Message */
-.copy-success {
-    display: none;
-    margin-top: 10px;
-    color: #77b300;
-    font-weight: bold;
-}
-
-/* Footer Styles */
 footer {
-    background: rgba(51, 51, 51, 0.9);
+    background-color: #1a202c;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-}
-
-footer .social-icons {
-    margin: 10px 0;
-}
-
-footer .social-icons a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-    color: #77b300;
-}
-
-/* Typing Animation */
-.typing-animation {
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: rgba(255, 255, 255, 0.75); }
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Matrix Background */
-.matrix {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    color: rgba(0, 255, 0, 0.5);
-    font-size: 20px;
-    font-family: monospace;
-}
-
-.matrix div {
-    position: absolute;
-    width: 20px;
-    height: 100%;
-    top: 0;
-    animation: matrix-fall linear infinite;
-}
-
-.matrix div span {
-    display: block;
-    line-height: 1.5;
-}
-
-@keyframes matrix-fall {
-    0% {
-        top: -100%;
-    }
-    100% {
-        top: 100%;
-    }
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    #services .service, #commands .command {
-        width: 80%;
-        margin: 20px auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-    }
-
-    #home h2 {
-        font-size: 24px;
-    }
-
-    #home p {
-        font-size: 18px;
-    }
-
-    #services .service, #commands .command {
-        width: 100%;
-    }
-}
-
-/* Additional CSS for Scroll-to-Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    font-size: 18px;
-    background: #77b300;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    transition: opacity 0.3s;
-}
-
-.scroll-to-top.visible {
-    display: block;
-    opacity: 0.8;
-}
-
-.scroll-to-top:hover {
-    opacity: 1;
 }
