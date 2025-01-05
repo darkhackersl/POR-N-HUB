@@ -1,6 +1,5 @@
-// Add your JavaScript code here for additional interactivity if needed
 document.addEventListener('DOMContentLoaded', function() {
-    // Example: Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Example: Add a scroll-to-top button
+    // Add a scroll-to-top button
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.textContent = '⬆️';
     scrollToTopBtn.classList.add('scroll-to-top');
@@ -31,26 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-  
-    // Add scroll animation
-    const scrollAnimatedElements = document.querySelectorAll('.scroll-animated');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-visible');
-                observer.unobserve(entry.target);
-            }
+    // Copy to clipboard functionality
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const command = this.getAttribute('data-command');
+            navigator.clipboard.writeText(command).then(() => {
+                alert(`Copied to clipboard: ${command}`);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         });
-    }, observerOptions);
-
-    scrollAnimatedElements.forEach(el => {
-        observer.observe(el);
     });
 });
