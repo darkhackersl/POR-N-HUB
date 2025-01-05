@@ -35,7 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const command = this.getAttribute('data-command');
             navigator.clipboard.writeText(command).then(() => {
-                alert(`Copied to clipboard: ${command}`);
+                const successMessage = this.nextElementSibling;
+                successMessage.style.display = 'inline';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 2000);
             }).catch(err => {
                 console.error('Failed to copy: ', err);
             });
