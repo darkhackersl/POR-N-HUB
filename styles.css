@@ -239,11 +239,16 @@ html {
     animation: matrix-fall linear infinite;
 }
 
+.matrix div span {
+    display: block;
+    line-height: 1.5;
+}
+
 @keyframes matrix-fall {
-    from {
+    0% {
         top: -100%;
     }
-    to {
+    100% {
         top: 100%;
     }
 }
