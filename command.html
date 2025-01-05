@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands - Thenu-MD OFC WEB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-code"></i> Thenu-MD OFC WEB</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="index.html#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="command.html"><i class="fas fa-terminal"></i> Commands</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="commands">
+        <div class="container">
+            <h2>Commands</h2>
+            <div class="command">
+                <h3>Command 1: <span class="command-name">ls -l</span></h3>
+                <p>List directory contents in long format.</p>
+                <button class="copy-btn" data-command="ls -l">Copy</button>
+            </div>
+            <div class="command">
+                <h3>Command 2: <span class="command-name">cd /path/to/directory</span></h3>
+                <p>Change the current directory to the specified path.</p>
+                <button class="copy-btn" data-command="cd /path/to/directory">Copy</button>
+            </div>
+            <div class="command">
+                <h3>Command 3: <span class="command-name">mkdir new_directory</span></h3>
+                <p>Create a new directory.</p>
+                <button class="copy-btn" data-command="mkdir new_directory">Copy</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thenu-MD OFC WEB. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
