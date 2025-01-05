@@ -110,6 +110,41 @@ section {
     margin-bottom: 10px;
 }
 
+/* Animated Border */
+.animated-border {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-border::before, .animated-border::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #77b300;
+    animation: borderAnimation 1s infinite alternate;
+}
+
+.animated-border::before {
+    top: -5px;
+    left: -5px;
+}
+
+.animated-border::after {
+    bottom: -5px;
+    right: -5px;
+}
+
+@keyframes borderAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Copy Button */
 .copy-btn {
     margin-top: 10px;
     padding: 5px 10px;
@@ -123,6 +158,14 @@ section {
 
 .copy-btn:hover {
     background: #66a200;
+}
+
+/* Copy Success Message */
+.copy-success {
+    display: none;
+    margin-top: 10px;
+    color: #77b300;
+    font-weight: bold;
 }
 
 /* Footer Styles */
