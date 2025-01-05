@@ -41,4 +41,26 @@ document.addEventListener('DOMContentLoaded', function() {
         fallElement.innerHTML = codingObjects[Math.floor(Math.random() * codingObjects.length)];
         container.appendChild(fallElement);
     }
+
+    // Add scroll animation
+    const scrollAnimatedElements = document.querySelectorAll('.scroll-animated');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    scrollAnimatedElements.forEach(el => {
+        observer.observe(el);
+    });
 });
