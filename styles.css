@@ -4,13 +4,17 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color: #333;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
-    background: url('https://i.imghippo.com/files/OGs5539KM.webp') no-repeat center center/cover;
-    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #000000, #434343);
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -213,6 +217,35 @@ footer .social-icons a:hover {
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
+}
+
+/* Matrix Background */
+.matrix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    color: rgba(0, 255, 0, 0.5);
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.matrix div {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    animation: matrix-fall linear infinite;
+}
+
+@keyframes matrix-fall {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 100%;
+    }
 }
 
 /* Responsive Styles */
